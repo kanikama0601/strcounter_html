@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字数カウンター</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="title-input-container">
+            <input type="text" id="titleInput" class="title-input" placeholder="タイトルを入力してください（例：インターンシップ志望動機作成ツール）" value="インターンシップ志望動機作成ツール">
+            <br>
+            <button id="titleFixBtn" class="title-fix-btn">タイトルを固定</button>
+        </div>
+        
+        <h1 id="mainTitle">📝 インターンシップ志望動機作成ツール</h1>
+        
+        <div class="input-section">
+            <div class="limit-input">
+                <label for="charLimit">文字数制限:</label>
+                <input type="number" id="charLimit" value="400" min="1" max="10000">
+                <span>文字</span>
+            </div>
+            
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="setLimit(200)">200文字</button>
+                <button class="preset-btn" onclick="setLimit(250)">250文字</button>
+                <button class="preset-btn" onclick="setLimit(400)">400文字</button>
+                <button class="preset-btn" onclick="setLimit(600)">600文字</button>
+                <button class="preset-btn" onclick="setLimit(800)">800文字</button>
+            </div>
+        </div>
+
+        <div class="text-area-container">
+            <textarea id="textArea" placeholder="こちらにインターンシップの志望動機や自己PRを入力してください。
+
+例：
+私が貴社のインターンシップに応募した理由は..."></textarea>
+            <div class="character-count" id="charCount">0/400</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
